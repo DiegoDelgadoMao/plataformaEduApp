@@ -1,0 +1,27 @@
+@startuml
+start
+
+:Inicio de sesión;
+if (¿Es Administrador?) then (Sí)
+    :Acceder a panel de administración;
+    :Administrar usuarios;
+    :Administrar cursos;
+    stop
+else (No)
+    if (¿Es Profesor?) then (Sí)
+        :Acceder a panel de profesor;
+        :Crear curso;
+        :Agregar material al curso;
+        :Crear evaluación;
+        stop
+    else (Es Estudiante)
+        :Acceder a panel de estudiante;
+        :Ver lista de cursos;
+        :Inscribirse en curso;
+        :Acceder a contenido del curso;
+        :Realizar evaluaciones;
+        stop
+    endif
+endif
+
+@enduml

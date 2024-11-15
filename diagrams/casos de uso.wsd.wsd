@@ -1,0 +1,32 @@
+@startuml
+actor Estudiante
+actor Profesor
+actor Administrador
+
+usecase "Registrarse" as UC_Registrarse
+usecase "Iniciar Sesión" as UC_IniciarSesion
+usecase "Inscribirse en Curso" as UC_InscribirCurso
+usecase "Ver Historial de Cursos" as UC_VerHistorial
+usecase "Crear Curso" as UC_CrearCurso
+usecase "Evaluar Estudiante" as UC_EvaluarEstudiante
+usecase "Agregar Material" as UC_AgregarMaterial
+usecase "Calificar Evaluación" as UC_CalificarEvaluacion
+usecase "Administrar Usuarios" as UC_AdministrarUsuarios
+usecase "Administrar Cursos" as UC_AdministrarCursos
+
+Estudiante --> UC_Registrarse
+Estudiante --> UC_IniciarSesion
+Estudiante --> UC_InscribirCurso
+Estudiante --> UC_VerHistorial
+
+Profesor --> UC_IniciarSesion
+Profesor --> UC_CrearCurso
+Profesor --> UC_EvaluarEstudiante
+Profesor --> UC_AgregarMaterial
+Profesor --> UC_CalificarEvaluacion
+
+Administrador --> UC_IniciarSesion
+Administrador --> UC_AdministrarUsuarios
+Administrador --> UC_AdministrarCursos
+
+@enduml

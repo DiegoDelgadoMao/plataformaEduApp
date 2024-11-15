@@ -1,0 +1,417 @@
+{
+  "info": {
+    "name": "Plataforma de Educación API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Asignatura",
+      "item": [
+        {
+          "name": "Obtener todas las asignaturas",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/asignaturas"
+          }
+        },
+        {
+          "name": "Obtener asignatura por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/asignaturas/:id",
+            "description": "Reemplaza :id con el ID de la asignatura."
+          }
+        },
+        {
+          "name": "Crear nueva asignatura",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:9001/api/asignaturas",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nombre\": \"Matemáticas\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Actualizar asignatura",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:9001/api/asignaturas/:id",
+            "description": "Reemplaza :id con el ID de la asignatura.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nombre\": \"Ciencias\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar asignatura",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:9001/api/asignaturas/:id",
+            "description": "Reemplaza :id con el ID de la asignatura."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Asistencia",
+      "item": [
+        {
+          "name": "Obtener todas las asistencias",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/asistencias"
+          }
+        },
+        {
+          "name": "Obtener asistencia por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/asistencias/:id",
+            "description": "Reemplaza :id con el ID de la asistencia."
+          }
+        },
+        {
+          "name": "Crear nueva asistencia",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:9001/api/asistencias",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"estudiante\": {\n        \"id\": 1\n    },\n    \"fecha\": \"2024-11-11\",\n    \"estado\": \"PRESENTE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Actualizar asistencia",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:9001/api/asistencias/:id",
+            "description": "Reemplaza :id con el ID de la asistencia.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"estado\": \"AUSENTE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar asistencia",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:9001/api/asistencias/:id",
+            "description": "Reemplaza :id con el ID de la asistencia."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Calificacion",
+      "item": [
+        {
+          "name": "Obtener todas las calificaciones",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/calificaciones"
+          }
+        },
+        {
+          "name": "Obtener calificación por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/calificaciones/:id",
+            "description": "Reemplaza :id con el ID de la calificación."
+          }
+        },
+        {
+          "name": "Crear nueva calificación",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:9001/api/calificaciones",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"estudiante\": {\n        \"id\": 1\n    },\n    \"asignatura\": {\n        \"id\": 1\n    },\n    \"calificacion\": 95.5,\n    \"fecha\": \"2024-11-11\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Actualizar calificación",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:9001/api/calificaciones/:id",
+            "description": "Reemplaza :id con el ID de la calificación.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"calificacion\": 88.0\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar calificación",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:9001/api/calificaciones/:id",
+            "description": "Reemplaza :id con el ID de la calificación."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Curso",
+      "item": [
+        {
+          "name": "Obtener todos los cursos",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/cursos"
+          }
+        },
+        {
+          "name": "Obtener curso por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/cursos/:id",
+            "description": "Reemplaza :id con el ID del curso."
+          }
+        },
+        {
+          "name": "Crear nuevo curso",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:9001/api/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nombre\": \"Curso de Historia\",\n    \"docente\": {\n        \"id\": 1\n    }\n}"
+            }
+          }
+        },
+        {
+          "name": "Actualizar curso",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:9001/api/cursos/:id",
+            "description": "Reemplaza :id con el ID del curso.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nombre\": \"Curso de Ciencias\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar curso",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:9001/api/cursos/:id",
+            "description": "Reemplaza :id con el ID del curso."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Estudiante",
+      "item": [
+        {
+          "name": "Obtener todos los estudiantes",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/estudiantes"
+          }
+        },
+        {
+          "name": "Obtener estudiante por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/estudiantes/:id",
+            "description": "Reemplaza :id con el ID del estudiante."
+          }
+        },
+        {
+          "name": "Crear nuevo estudiante",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:9001/api/estudiantes",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"usuario\": {\n        \"id\": 1\n    },\n    \"grado\": \"5to Grado\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Actualizar estudiante",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:9001/api/estudiantes/:id",
+            "description": "Reemplaza :id con el ID del estudiante.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"grado\": \"6to Grado\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar estudiante",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:9001/api/estudiantes/:id",
+            "description": "Reemplaza :id con el ID del estudiante."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Material",
+      "item": [
+        {
+          "name": "Obtener todos los materiales",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/materiales"
+          }
+        },
+        {
+          "name": "Obtener material por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/materiales/:id",
+            "description": "Reemplaza :id con el ID del material."
+          }
+        },
+        {
+          "name": "Crear nuevo material",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:9001/api/materiales",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"titulo\": \"Guía de Matemáticas\",\n    \"descripcion\": \"Material de apoyo\",\n    \"archivoUrl\": \"http://example.com/guia-matematicas.pdf\",\n    \"docente\": {\n        \"id\": 1\n    }\n}"
+            }
+          }
+        },
+        {
+          "name": "Actualizar material",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:9001/api/materiales/:id",
+            "description": "Reemplaza :id con el ID del material.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"titulo\": \"Guía de Ciencias\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar material",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:9001/api/materiales/:id",
+            "description": "Reemplaza :id con el ID del material."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mensaje",
+      "item": [
+        {
+          "name": "Obtener todos los mensajes",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/mensajes"
+          }
+        },
+        {
+          "name": "Obtener mensaje por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/mensajes/:id",
+            "description": "Reemplaza :id con el ID del mensaje."
+          }
+        },
+        {
+          "name": "Crear nuevo mensaje",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:9001/api/mensajes",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"remitente\": {\n        \"id\": 1\n    },\n    \"destinatario\": {\n        \"id\": 2\n    },\n    \"mensaje\": \"Mensaje de prueba\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Actualizar mensaje",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:9001/api/mensajes/:id",
+            "description": "Reemplaza :id con el ID del mensaje.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"mensaje\": \"Mensaje actualizado\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar mensaje",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:9001/api/mensajes/:id",
+            "description": "Reemplaza :id con el ID del mensaje."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Usuario",
+      "item": [
+        {
+          "name": "Obtener todos los usuarios",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/usuarios"
+          }
+        },
+        {
+          "name": "Obtener usuario por ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:9001/api/usuarios/:id",
+            "description": "Reemplaza :id con el ID del usuario."
+          }
+        },
+        {
+          "name": "Crear nuevo usuario",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:9001/api/usuarios",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nombre\": \"Juan Perez\",\n    \"correo\": \"juan.perez@example.com\",\n    \"contrasena\": \"123456\",\n    \"rol\": \"ESTUDIANTE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Actualizar usuario",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:9001/api/usuarios/:id",
+            "description": "Reemplaza :id con el ID del usuario.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nombre\": \"Juan Pérez Actualizado\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar usuario",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:9001/api/usuarios/:id",
+            "description": "Reemplaza :id con el ID del usuario."
+          }
+        }
+      ]
+    }
+  ]
+}
+

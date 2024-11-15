@@ -1,0 +1,70 @@
+@startuml
+package "Plataforma de Educación" {
+    
+    package "Gestión de Usuarios" {
+        class Usuario {
+            + id: Integer
+            + nombre: String
+            + email: String
+            + tipoUsuario: String
+            + login()
+            + logout()
+        }
+
+        class Estudiante
+        class Profesor
+        class Administrador
+
+        Usuario <|-- Estudiante
+        Usuario <|-- Profesor
+        Usuario <|-- Administrador
+    }
+
+    package "Gestión de Cursos" {
+        class Curso {
+            + id: Integer
+            + nombre: String
+            + descripcion: String
+            + duracion: Integer
+        }
+
+        class Material {
+            + id: Integer
+            + titulo: String
+            + tipo: String
+        }
+
+        class Evaluacion {
+            + id: Integer
+            + nombre: String
+            + tipo: String
+        }
+
+        Curso "1" --> "*" Material
+        Curso "1" --> "*" Evaluacion
+    }
+
+    package "Gestión de Inscripción y Evaluación" {
+        class Inscripcion {
+            + estudiante: Estudiante
+            + curso: Curso
+            + fechaInscripcion: Date
+        }
+
+        class Historial {
+            + estudiante: Estudiante
+            + cursos: List<Curso>
+        }
+
+        class Calificacion {
+            + estudiante: Estudiante
+            + evaluacion: Evaluacion
+            + nota: Integer
+        }
+
+        Estudiante "1" --> "*" Inscripcion
+        Estudiante "1" --> "*" Historial
+        Estudiante "1" --> "*" Calificacion
+    }
+}
+@enduml

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-4 text-center">Gestión de Estudiantes</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Lista de Estudiantes</h3>
+                <ul id="estudiantesList" class="list-group"></ul>
+            </div>
+            <div class="col-md-6">
+                <h3>Agregar/Actualizar Estudiante</h3>
+                <form id="estudianteForm">
+                    <input type="hidden" id="estudianteId">
+                    <div class="mb-3">
+                        <label for="usuarioId" class="form-label">Usuario</label>
+                        <select id="usuarioId" class="form-control" required>
+                            <option value="">Seleccione un usuario</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="grado" class="form-label">Grado</label>
+                        <input type="text" class="form-control" id="grado" required>
+                    </div>
+                    <button type="button" id="btnGuardar" class="btn btn-primary">Guardar</button>
+                    <button type="button" id="btnLimpiar" class="btn btn-secondary">Limpiar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/services/estudiantes.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Verificar si el usuario está autenticado
+            if (!sessionStorage.getItem('isLoggedIn')) {
+                // Redirigir al login si no está autenticado
+                window.location.href = './login.html';
+            }
+        });
+    </script>
+</body>
+
+</html>

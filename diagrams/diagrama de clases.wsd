@@ -1,0 +1,77 @@
+@startuml
+class Usuario {
+    - id: Integer
+    - nombre: String
+    - email: String
+    - contraseña: String
+    - tipoUsuario: String
+    + login()
+    + logout()
+}
+
+class Estudiante {
+    - grado: String
+    - cursosInscritos: List<Curso>
+    + inscribirCurso(curso: Curso)
+    + verHistorial()
+}
+
+class Profesor {
+    - especialidad: String
+    - cursosDictados: List<Curso>
+    + crearCurso(curso: Curso)
+    + evaluarEstudiante(estudiante: Estudiante)
+}
+
+class Curso {
+    - id: Integer
+    - nombre: String
+    - descripcion: String
+    - duracion: Integer
+    - profesor: Profesor
+    + agregarMaterial(material: Material)
+    + listarEstudiantes()
+}
+
+class Material {
+    - id: Integer
+    - titulo: String
+    - contenido: String
+    - tipo: String
+    - curso: Curso
+    + descargar()
+    + ver()
+}
+
+class Evaluacion {
+    - id: Integer
+    - nombre: String
+    - tipo: String
+    - calificacionMaxima: Integer
+    - curso: Curso
+    + crearPregunta(pregunta: Pregunta)
+    + calificar(estudiante: Estudiante, nota: Integer)
+}
+
+class Pregunta {
+    - id: Integer
+    - texto: String
+    - opciones: List<String>
+    - respuestaCorrecta: String
+}
+
+class Administrador {
+    - privilegios: List<String>
+    + gestionarUsuarios()
+    + gestionarCursos()
+}
+
+Usuario <|-- Estudiante
+Usuario <|-- Profesor
+Usuario <|-- Administrador
+Curso "1" --> "1" Profesor
+Curso "1" --> "*" Estudiante
+Curso "1" --> "*" Material
+Curso "1" --> "*" Evaluacion
+Evaluacion "1" --> "*" Pregunta
+@enduml
